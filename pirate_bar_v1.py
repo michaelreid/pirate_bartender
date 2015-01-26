@@ -24,15 +24,30 @@ ingredients = {
 
 # 2. Function to ask what style of drink a customer likes:
 
-def what_style_drink():
- """function to ask user what drink they would like"""
- print "Welcomes Yer To Thee Pirate Bar\n"
- print "What drink would yer like?"
- for types in questions:
-     print questions[types]
+def what_drink_like():
+ """Ask user what drink they would like.
+
+ Welcome user.
+ Map 'questions' dictionary.
+ Return 'user_drink' dictionary.
+  - keys: flavours in 'questions' dictionary
+  - values: True or False
+ """
+ 
+ print "Welcome Yer To The Pirate Bar"
+ print "What drink would yer like?\n"
+ user_drink = {}
+ for flavours in questions:
+   user_response = raw_input(questions[flavours] + ": ") # ask all questions in dictionary
+   if user_response == 'y':  # test if response is yes
+         user_drink[flavours] = True # and add response to user_drink dictionary
+   else:
+         user_drink[flavours] = False 
+ print user_drink
 
 
 
 if __name__ == '__main__':
-    what_style_drink()
+    what_drink_like()
+    
  
