@@ -25,6 +25,7 @@ ingredients = {
     "fruity": ["Slice of orange", "Dash of cassis", "Cherry on top"]
 }
 
+# additional alcohol to add to the drinks (because they seem a bit weak):
 alcohol = {
     "strong":"Two parts gin to one part vodka.",
     "salty": "A big mug o' gin for yer.",
@@ -32,6 +33,12 @@ alcohol = {
     "sweet": "Like a young lass I did once marry, a nice tall glass of rum.",
     "fruity": "Ahh, lots a fruity rum."
 }
+
+# extension exercise one - name the drinks:
+# two lists - adjectives and nouns
+adj = ["salty", "prickly", "sweet", "tasty"]
+nouns = ["sea-dog", "peg-leg", "capn's-parrot", "first-mate"]
+
 
 # 2. Function to ask what style of drink a customer likes:
 
@@ -88,7 +95,7 @@ def drink_constructor(preferences):
  for items in drink:
   print drink[n]
   n += 1
- print "How'd you like that fair drink?"
+ print "How'd you like that fair drink? I call it the {0} {1}".format(random.choice(adj), random.choice(nouns))
  
 # 4. User '__main__' method to call function from command line:
 if __name__ == '__main__':
