@@ -57,11 +57,7 @@ def what_drink_like():
  user_drink = {}
  for flavours in questions:
    user_response = raw_input(questions[flavours] + ": ") # ask all questions in dictionary
-   # TODO: test for either 'y' or 'Yes'
-   if user_response == 'y':  # test if response is yes
-         user_drink[flavours] = True # and add response to user_drink dictionary
-   else:
-         user_drink[flavours] = False 
+   user_drink[flavours] = user_response.lower() in ['y', 'yes']
  return user_drink
 
 # 3. Function to construct a drink:
@@ -90,17 +86,14 @@ def drink_constructor(preferences):
    drink.append(
        random.choice(ingredients[types])
      )   
- print "Ay, I did make yer a tidy drink. Here tis':\n"
+ print "Ay, I did make yer a tidy drink. Here tis': "
  n = 0
  for items in drink:
   print drink[n]
   n += 1
  print "How'd you like that fair drink? I call it the {0} {1}".format(random.choice(adj), random.choice(nouns))
  
-# 4. User '__main__' method to call function from command line:
+# 4. Use '__main__' method to call function from command line:
 if __name__ == '__main__':
- preferences = what_drink_like()
- drink_constructor(preferences)
- 
-     
- 
+    preferences = what_drink_like()
+    drink_constructor(preferences)
