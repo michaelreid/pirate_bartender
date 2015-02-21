@@ -87,10 +87,8 @@ def drink_constructor(preferences):
        random.choice(ingredients[types])
      )   
  print "Ay, I did make yer a tidy drink. Here tis': "
- n = 0
  for items in drink:
-  print drink[n]
-  n += 1
+  print items
  print "How'd you like that fair drink? I call it the {0} {1}".format(random.choice(adj), random.choice(nouns))
  
 # 4. Use '__main__' method to call function from command line:
